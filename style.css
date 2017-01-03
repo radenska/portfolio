@@ -1,0 +1,98 @@
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  background-color: lightgray;
+  margin: 0.5%;
+}
+
+header {
+  width: 100%;
+  display: inline-block;
+  font-size: 1.7em;
+  margin-bottom: 3%;
+  overflow: visible;;
+}
+
+nav {
+  float: right;
+  display: inline-block;
+  margin-right: 0.5%;
+  text-align: right;
+  overflow: visible;
+}
+
+article {
+  font-size: 1.5em;
+  margin-bottom: 3%;
+}
+
+section {
+  font-size: 1.5em;
+  margin-bottom: 3%;
+}
+
+hr.styled {
+  border: 0;
+  height: 0.1em;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0));
+}
+
+.hamburger {
+
+}
+
+nav ul {
+  overflow: visible;
+  display: none;
+  list-style: none;
+  vertical-align: middle;
+  padding: 1em;
+}
+
+nav:hover ul {
+  display: block;
+  background-color: white;
+  opacity: 0.9;
+  position: fixed;
+  right: 3%;
+}
+
+nav li {
+  display: block;
+  text-align: left;
+}
+
+nav li a {
+  font-size: 0.5em;
+  color: slategray;
+}
+
+@media only screen and (min-width: 640px) {
+  header {
+    font-size: 3em;
+  }
+
+  nav {
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 0.2em;
+  }
+  nav ul {
+    display: block;
+    padding: none;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  nav:hover ul {
+    background-color: inherit;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+}
