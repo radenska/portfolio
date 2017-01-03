@@ -8,7 +8,7 @@ body {
 header {
   width: 100%;
   display: inline-block;
-  font-size: 1.7em;
+  font-size: 1.1em;
   margin-bottom: 3%;
   overflow: visible;;
 }
@@ -22,12 +22,12 @@ nav {
 }
 
 article {
-  font-size: 1em;
+  font-size: 0.7em;
   margin-bottom: 3%;
 }
 
 section {
-  font-size: 1em;
+  font-size: 0.7em;
   margin-bottom: 3%;
 }
 
@@ -67,9 +67,14 @@ nav li a {
   color: slategray;
 }
 
-@media only screen and (min-width: 640px) {
+footer {
+  font-size: 0.5em;
+  color: slategray;
+}
+
+@media only screen and (min-width: 320px) {
   header {
-    font-size: 3em;
+    font-size: 1.9em;
   }
 
   nav {

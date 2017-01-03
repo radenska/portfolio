@@ -16,32 +16,17 @@ projArray[2] = new Proj('Bus Mall', 'https://radenska.github.io/bus-mall', '', '
 function displayProj() {
   //HAVE TO FIGURE OUT THE TABLE APPENDING - IT NO WORKEE RIGHT NOW, BUT THE TEST DOES
   $(document).ready(function() {
-    var tbl = '</tbody><tfoot><tr>....</tr></tfoot></table>';
+    var tbl = '<table>';
     for (var i = 0; i < projArray.length; i ++) {
       tbl += '<tr>';
-      tbl += '<td>' + projArray[i].name + '</tr>';
-      tbl += '<td>' + projArray[i].path + '</tr>';
-      tbl += '<td>' + projArray[i].img + '</tr>';
-      tbl += '<td>' + projArray[i].description + '</tr>';
+      tbl += '<td>' + projArray[i].name + '</td>';
+      tbl += '<td>' + projArray[i].path + '</td>';
+      tbl += '<td>' + projArray[i].img + '</td>';
+      tbl += '<td>' + projArray[i].description + '</td>';
     }
-    tbl += '</tbody><tfoot><tr>....</tr></tfoot></table>';
+    tbl += '</table>';
     $(tbl).appendTo('section');
-    var $test = $('<div>test test test</div>');
-    $('section').append($test);
-} //how do i call the function here immediately?
-
-// var data = [ [ 1, 2, 3 ], [ 4, 5, 6 ], [7, 8, 9 ] ];
-//
-// var html = '<table><thead><tr>...</tr></thead><tbody>';
-// for (var i = 0, len = data.length; i < len; ++i) {
-//     html += '<tr>';
-//     for (var j = 0, rowLen = data[i].length; j < rowLen; ++j ) {
-//         html += '<td>' + data[i][j] + '</td>';
-//     }
-//     html += "</tr>";
-// }
-// html += '</tbody><tfoot><tr>....</tr></tfoot></table>';
-//
-// $(html).appendTo('#div1');
+  });
+}  //how do i call the function here immediately?
 
 displayProj();
