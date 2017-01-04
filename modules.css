@@ -1,46 +1,3 @@
-body {
-  font-family: 'Open Sans Condensed', sans-serif;
-  text-align: center;
-  background-color: lightgray;
-  margin: 0.5%;
-}
-
-header {
-  width: 100%;
-  display: inline-block;
-  font-size: 1.1em;
-  margin-bottom: 3%;
-  overflow: visible;;
-}
-
-nav {
-  float: right;
-  display: inline-block;
-  margin-right: 0.5%;
-  text-align: right;
-  overflow: visible;
-}
-
-article {
-  font-size: 0.7em;
-  margin-bottom: 3%;
-}
-
-section {
-  font-size: 0.7em;
-  margin-bottom: 3%;
-}
-
-hr.styled {
-  border: 0;
-  height: 0.1em;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0));
-}
-
-.hamburger {
-
-}
-
 nav ul {
   overflow: visible;
   display: none;
@@ -63,11 +20,6 @@ nav li {
 }
 
 nav li a {
-  font-size: 0.5em;
-  color: slategray;
-}
-
-footer {
   font-size: 0.5em;
   color: slategray;
 }
@@ -103,5 +55,4 @@ footer {
   .hamburger {
     display: none;
   }
-
 }
