@@ -24,7 +24,7 @@ nav li a {
   color: slategray;
 }
 
-.invisible {
+.visible {
   display: none;
 }
 
@@ -49,7 +49,7 @@ nav li a {
   }
 
   nav:hover ul {
-    background-color: inherit;
+    display: none;
   }
 
   .hamburger {
