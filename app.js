@@ -2,11 +2,11 @@
 
 var projArray = [];
 
-function Proj(name, path, image, description) {
-  this.name = name;
-  this.path = path;
-  this.description = description;
-  this.img = image;
+function Proj(projInfo) {
+  this.name = projInfo.name;
+  this.path = projInfo.path;
+  this.description = projInfo.description;
+  this.img = projInfo.img;
 }
 
 projInfo.prototype.toHtml = function() {
@@ -14,18 +14,12 @@ projInfo.prototype.toHtml = function() {
   $newProj.find('h3 a').text(this.name)
   $newProj.find('h3 a').attr('href', this.path);
   $newProj.find('p').text('this.description');
-  /* TODO: We also need to fill in:
-  1. author name
-  2. author url
-  3. article title
-  4. article body
-  5. publication*/
   $newProj.removeClass('invisible');
   return $newProj;
 };
 
-projInfo.forEach(function(value) {
-  projArray.push(new Proj(value));
+projInfo.forEach(function(val) {
+  projArray.push(new Proj(val));
 });
 
 projInfo.forEach(function(project) {
