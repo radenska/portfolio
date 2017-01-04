@@ -72,6 +72,10 @@ footer {
   color: slategray;
 }
 
+.invisible {
+  display: none;
+}
+
 @media only screen and (min-width: 320px) {
   header {
     font-size: 1.9em;
