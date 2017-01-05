@@ -1,43 +1,47 @@
-'use strict'
+'use strict';
 
 var projArray = [];
 
-function Proj(projInfo) {
-  this.name = projInfo.name;
-  this.path = projInfo.path;
-  this.description = projInfo.description;
-  this.img = projInfo.img;
+function Proj(individualProject) { //constructor
+  this.name = individualProject.name;
+  this.path = individualProject.path;
+  this.description = individualProject.description;
+  this.img = individualProject.img;
 }
 
-projInfo.prototype.toHtml = function() {
-  var $newProj = $('section.invisible').clone();
+Proj.prototype.toHtml = function() { //does the actual appending to the html
+  var $newProj = $('section.visible').clone();
   $newProj.find('h3 a').text(this.name)
   $newProj.find('h3 a').attr('href', this.path);
-  $newProj.find('p').text('this.description');
-  $newProj.removeClass('invisible');
+  $newProj.find('p').text(this.description);
+  $newProj.removeClass('visible');
   return $newProj;
 };
 
-projInfo.forEach(function(val) {
-  projArray.push(new Proj(val));
+projectInfo.forEach(function(ele) { //take the variable from projInfo.js and use the constructor to make each array element an object, which gets pushed to an array
+  projArray.push(new Proj(ele));
 });
 
-projInfo.forEach(function(project) {
-  $('section').append(project.toHtml());
+projArray.forEach(function(project) { //append each Proj object to the html
+  $('#projects').append(project.toHtml());
 });
 
-// function displayProj() {
-//   $(document).ready(function() {
-//     var tbl = '<table>';
-//     for (var i = 0; i < projArray.length; i ++) {
-//       tbl += '<tr>';
-//       tbl += '<td>' + projArray[i].name + '</td>';
-//       tbl += '<td>' + projArray[i].path + '</td>';
-//       tbl += '<td>' + projArray[i].img + '</td>';
-//       tbl += '<td>' + projArray[i].description + '</td>';
-//     }
-//     tbl += '</table>';
-//     $(tbl).appendTo('section');
-//   });
-// }  //how do i call the function here immediately?
-// displayProj();
+function handleNavClick () {
+  $('.tab').on('click', function() {
+    $('article').hide();
+    var tempDataName = $(this).data('name');
+    $('#' + tempDataName).fadeIn();
+  });
+  $('.tab:first').click();
+}
+
+function handleHamburgerClick () {
+  $('nav ul').on('click', function() {
+    // var tempDisplay = $(this).find().css('display');
+    // console.log(tempDisplay);
+    $(this).addClass('menu');
+  });
+}
+
+handleNavClick();
+handleHamburgerClick();
