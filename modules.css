@@ -1,3 +1,7 @@
+header {
+  font-size: 1.1em;
+}
+
 nav ul {
   overflow: visible;
   display: none;
@@ -24,13 +28,21 @@ nav li a {
   color: slategray;
 }
 
+article {
+  font-size: 0.8em;
+}
+
+section {
+  font-size: 1em;
+}
+
 .visible {
   display: none;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 400px) {
   header {
-    font-size: 1.9em;
+    font-size: 1.7em;
   }
 
   nav {
@@ -39,9 +51,17 @@ nav li a {
     text-align: center;
     margin: 0.2em;
   }
+
+  article {
+    font-size: 1.2em;
+  }
   nav ul {
     display: block;
     padding: none;
+  }
+
+  section {
+    font-size: 1.2em;
   }
 
   nav li {

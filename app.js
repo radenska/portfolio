@@ -23,21 +23,16 @@ projectInfo.forEach(function(ele) { //take the variable from projInfo.js and use
 });
 
 projArray.forEach(function(project) { //append each Proj object to the html
-  $('div').append(project.toHtml());
+  $('#projects').append(project.toHtml());
 });
 
-// function displayProj() {
-//   $(document).ready(function() {
-//     var tbl = '<table>';
-//     for (var i = 0; i < projArray.length; i ++) {
-//       tbl += '<tr>';
-//       tbl += '<td>' + projArray[i].name + '</td>';
-//       tbl += '<td>' + projArray[i].path + '</td>';
-//       tbl += '<td>' + projArray[i].img + '</td>';
-//       tbl += '<td>' + projArray[i].description + '</td>';
-//     }
-//     tbl += '</table>';
-//     $(tbl).appendTo('section');
-//   });
-// }  //how do i call the function here immediately?
-// displayProj();
+function handleNavClick () {
+  $('.tab').on('click', function() {
+    $('article').hide();
+    var tempDataName = $(this).data('name');
+    $('#' + tempDataName).fadeIn();
+  });
+  $('.tab:first').click();
+}
+
+handleNavClick();

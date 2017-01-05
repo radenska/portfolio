@@ -8,7 +8,6 @@ body {
 header {
   width: 100%;
   display: inline-block;
-  font-size: 1.1em;
   margin-bottom: 3%;
   overflow: visible;;
 }
@@ -22,12 +21,10 @@ nav {
 }
 
 article {
-  font-size: 0.7em;
   margin-bottom: 3%;
 }
 
 section {
-  font-size: 0.7em;
   margin-bottom: 3%;
 }
 
