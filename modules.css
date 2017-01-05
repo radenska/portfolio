@@ -11,13 +11,13 @@ nav ul {
   padding-bottom: 0.5em;
 }
 
-nav:hover ul {
+/*.menu {
   display: block;
   background-color: white;
   opacity: 0.9;
   position: fixed;
   right: 3%;
-}
+}*/
 
 nav li {
   display: block;
@@ -25,10 +25,6 @@ nav li {
   font-size: 0.5em;
   color: slategray;
   padding-top: 0.5em;
-  cursor: pointer;
-}
-
-nav li:hover {
   cursor: pointer;
 }
 
@@ -67,9 +63,9 @@ section {
     margin-left: 0.5em;
   }
 
-  nav:hover ul {
+  /*nav:hover ul {
     display: none;
-  }
+  }*/
 
   .hamburger {
     display: none;

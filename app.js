@@ -35,4 +35,13 @@ function handleNavClick () {
   $('.tab:first').click();
 }
 
+function handleHamburgerClick () {
+  $('nav ul').on('click', function() {
+    // var tempDisplay = $(this).find().css('display');
+    // console.log(tempDisplay);
+    $(this).addClass('menu');
+  });
+}
+
 handleNavClick();
+handleHamburgerClick();
