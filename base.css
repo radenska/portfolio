@@ -45,3 +45,7 @@ footer {
     margin: 0.2em;
   }
 }
+
+.hidden {
+  display: none;
+}
