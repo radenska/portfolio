@@ -5,6 +5,18 @@ body {
   margin: 0.5%;
 }
 
+h3 {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
 header {
   width: 100%;
   display: inline-block;
