@@ -9,15 +9,11 @@ nav ul {
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
-}
-
-/*.menu {
-  display: block;
   background-color: white;
   opacity: 0.9;
   position: fixed;
   right: 3%;
-}*/
+}
 
 nav li {
   display: block;
@@ -51,6 +47,10 @@ section {
   nav ul {
     display: block;
     padding: none;
+    background-color: inherit;
+    opacity: 1;
+    position: relative;
+    right: auto;
   }
 
   section {
