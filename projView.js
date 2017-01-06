@@ -26,10 +26,18 @@ projView.handleCategoryFilter = function() {
 
 projView.setTeasers = function() {
   $('p *:nth-of-type(n+1)').hide();
+  var readOn = '...Read on';
+  var showLess = '...showLess';
+  $('.read-on').text(readOn);
   $('#projects').on('click', '.read-on', function(e) {
     e.preventDefault();
-    $(this).parent().find('*').fadeIn();
-    $(this).hide();
+    if ($(this).text() == readOn) {
+      $(this).siblings('p').find('*').fadeIn();
+      $(this).text(showLess);
+    } else {
+      $(this).siblings('p').find('*').fadeOut();
+      $(this).text(readOn);
+    }
   });
 };
 
