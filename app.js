@@ -8,12 +8,10 @@ function Proj (obj) {
     this[key] = obj[key];
 }
 
-function Proj
-
 Proj.prototype.toHtml = function() { //does the actual appending to the html
   var source = $('#projects-template').html();
   var renderArticle = Handlebars.compile(source);
-  var context = articles;
+  var context = projArray;
   return renderArticle(this);
 };
 
@@ -25,7 +23,7 @@ projArray.forEach(function(project) { //append each Proj object to the html
   $('#projects').append(project.toHtml());
 });
 
-navHandle.prototype.handleNavClick (function() {
+navHandle.handleNavClick = function () {
   $('.tab').on('click', function() {
     $('article').hide();
     var tempDataName = $(this).data('name');
@@ -35,9 +33,9 @@ navHandle.prototype.handleNavClick (function() {
     }
   });
   $('.tab:first').click();
-});
+}
 
-navHandle.prototype.handleHamburgerClick (function() {
+navHandle.handleHamburgerClick = function() {
   $('.hamburger').on('click', function() {
     if ($('.hamburger').css('display') === 'block') {
       var displayVal = $('nav ul').css('display');
@@ -49,7 +47,9 @@ navHandle.prototype.handleHamburgerClick (function() {
       }
     }
   });
-});
+}
 //these two functions handle clicking on the nav menu; in mobile mode, this includes making the ul (tabs) visible on a click as well as invisible if the person either clicks a tab or link OR they click the hamburger again; in either view, they also display and hide the appropriate content based on user click; the default is "about"
-navHandle.handleNavClick();
-navHandle.handleHamburgerClick();
+$(document).ready(function() {
+  navHandle.handleNavClick();
+  navHandle.handleHamburgerClick();
+});

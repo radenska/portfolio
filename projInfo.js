@@ -4,22 +4,25 @@ var projectInfo = [
     name:       'The Cookie Stand public site',
     path:   'https://radenska.github.io/cookie-stand',
     publishedOn: '2015-11-05',
-    description: 'The Cookie Stand public site is the customer site for a cookie store franchise. Users   can learn more about the franchise, including locations, hours, and merchandise. They can also buy merchanise through an online order form.',
+    description: '<p>The Cookie Stand public site is the <span>customer site </span>for a cookie store franchise. On this site, users can <span>learn</span> more about the franchise, including locations, hours, and merchandise. They can also buy merchanise through an online order form.</p>',
     img:    '',
+    category: 'fluffy things',
   },
   {
     name: 'About Me',
     path:   'https://radenska.github.io/about_me',
     publishedOn: '2015-11-05',
-    description: 'The about me page quizzes the user on a few aspects of my (Yana\'s) life before allowing them to see a brief site about me as well as displaying how they did on the questions.',
+    description: '<p>The about me page quizzes the user on a few aspects of my <span>(Yana\'s)</span> life before allowing them to see a brief site about me as well as displaying how they did on the questions.',
     img:    '',
+    category: 'shiny things',
   },
   {
     name:       'Bus Mall',
     path:   'https://radenska.github.io/bus-mall',
     publishedOn: '2015-11-05',
-    description: 'This site is made for a product research team polling user choices in order to decide what to include in a merchandise catalog to be available on commuter buses.',
+    description: '<p>This site is made for a product research team polling <span></span> user choices in order to decide <span></span>what to include in a merchandise catalog to be available on commuter buses.</p>',
     img:    '',
+    category: 'shiny things',
   },
 ];
   // {
@@ -29,4 +32,5 @@ var projectInfo = [
   //   publishedOn: '2015-11-05',
   //   description: ''
       // img:    '',
+      // category:
   // },

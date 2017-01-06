@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="modules.css">
     <script id="projects-template" type="text/x-handlebars-template">
-      <section>
+      <section data-category="{{category}}">
         <h3><a href="{{path}}">{{name}}</a></h3>
         {{{description}}}
       </section>
@@ -26,6 +26,15 @@
     <hr class="styled">
     <article id="about">This will be a brief description of who I am and what this site is, but for right now, here is some lorem ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</article>
     <article id="projects">
+      <div>
+          <ul id="filters">
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter Projects by Category --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
     </article>
     <hr class="styled">
     <footer>tasteful, subtle, and functional footer content</footer>
@@ -34,5 +43,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="projInfo.js"></script>
     <script src="app.js"></script>
+    <script src="projView.js"></script>
   </body>
 </html>
