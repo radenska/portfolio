@@ -25,8 +25,8 @@ projView.handleCategoryFilter = function() {
 
 
 projView.setTeasers = function() {
-  $('.article-body *:nth-of-type(n+1)').hide(); // Hide elements beyond the first 2 in any article body.
-  $('#articles').on('click', 'a.read-on', function(e) {
+  $('section.p *:nth-of-type(n)').hide(); // Hide elements beyond the first 2 in any article body.
+  $('#articles').on('click', '.read-on', function(e) {
     e.preventDefault();
     $(this).parent().find('*').fadeIn();
     $(this).hide();
