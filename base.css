@@ -8,7 +8,9 @@ body {
 h3 {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  text-shadow: 0.02em 0.02em black;
   font-weight: bold;
+  color: #146496;
 }
 
 p {
@@ -25,6 +27,7 @@ a {
 
 header {
   font-family: 'Open Sans Condensed', sans-serif;
+  color: #00407D;
   width: 100%;
   display: inline-block;
 }
@@ -47,12 +50,12 @@ section {
 hr.styled {
   border: 0;
   height: 0.1em;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(131, 137, 150, 1), rgba(0, 0, 0, 0));
 }
 
 footer {
   font-size: 0.8em;
-  color: slategray;
+  color: #838996;
 }
 
 @media only screen and (min-width: 400px) {

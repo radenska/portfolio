@@ -5,6 +5,7 @@ nav img {
   width: 1em;
   height: 1em;
   margin-right: 0.3em;
+  vertical-align: middle;
 }
 nav ul {
   display: none;
@@ -26,24 +27,28 @@ nav li {
   display: block;
   text-align: left;
   font-size: 0.5em;
-  color: slategray;
-  padding-top: 0.5em;
+  color: #43464C;
   cursor: pointer;
+  opacity: 0.6;
 }
 
-article {
+article, section {
   font-size: 0.9em;
+  color: #43464C;
 }
 
-section {
-  font-size: 0.9em;
-}
 
 .read-on {
-  font-size: 0.7em;
-  display: inline;
+  font-size: 0.6em;
+  display: inline-block;
+  background: #146496;
+  border-radius: 0.2em;
   font-family: 'Open Sans Condensed', sans-serif;
-
+  color: #D1DAF0;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  text-align: center;
+  line-height: 1.5em;
 }
 
 @media only screen and (min-width: 400px) {

@@ -26,8 +26,8 @@ projView.handleCategoryFilter = function() {
 
 projView.setTeasers = function() {
   $('p *:nth-of-type(n+1)').hide();
-  var readOn = '... Read on';
-  var showLess = '... show Less';
+  var readOn = 'read more';
+  var showLess = 'show less';
   $('.read-on').text(readOn);
   $('#projects').on('click', '.read-on', function(e) {
     e.preventDefault();

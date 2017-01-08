@@ -1,0 +1,10 @@
+section img {
+  max-width: 30%;
+  border-radius: 0.2em;
+  margin: 0.5em;
+}
+
+ul a, span {
+  display: inline-block;
+  vertical-align: middle;
+}
