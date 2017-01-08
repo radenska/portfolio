@@ -9,6 +9,22 @@ var projectInfo = [
     category: 'fluffy things',
   },
   {
+    name:       'The Cookie Stand Employee site',
+    path:   'https://radenska.github.io/cookie-stand/sales.html',
+    publishedOn: '2015-11-05',
+    description: '<p>The Cookie Stand Employee site is a <span>a site for the owner of a salmon cookie shop franchise. On this site, the owner or other employees</span><span>can see the hourly cookie needs based on store location. These are calculated from average hourly numbers of customers and average cookie consumption consumption, both of which vary with location. The page also provides a form with which the owner can add store locations.</span></p>',
+    img:    '',
+    category: 'fluffy things',
+  },
+  {
+    name:       'Memory Game',
+    path:   '',
+    publishedOn: '2015-11-05',
+    description: '<p>A reproduction of the classic card game <span>in which the player attempts to match pairs of identical cards. This was a collaborative project with three others</span><span> Players can select from either a 4x4 or 6x6 board, refer to game instructions, see and register their high scores, and read some jokes if they don\'t feel like playing. The image database is larger than the minimum number of images needed, so there is a variety of pictures in every game.</span></p>',
+    img:    '',
+    category: 'shiny things',
+  },
+  {
     name: 'About Me',
     path:   'https://radenska.github.io/about_me',
     publishedOn: '2015-11-05',
@@ -27,10 +43,9 @@ var projectInfo = [
 ];
   // {
   //   name:       '',
-  //
   //   path:   '',
   //   publishedOn: '2015-11-05',
-  //   description: ''
-      // img:    '',
-      // category:
+  //   description: '<p><span></span><span></span></p>'
+  //   img:    '',
+  //   category:
   // },

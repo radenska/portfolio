@@ -1,11 +1,14 @@
 header {
   font-size: 1.1em;
 }
-
+nav img {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+}
 nav ul {
   display: none;
   list-style: none;
-  vertical-align: middle;
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
@@ -29,16 +32,23 @@ nav li {
 }
 
 article {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 section {
-  font-size: 1em;
+  font-size: 0.9em;
+}
+
+.read-on {
+  font-size: 0.7em;
+  display: inline;
+  font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 @media only screen and (min-width: 400px) {
   header {
-    font-size: 1.7em;
+    font-size: 2.2em;
   }
 
   article {
@@ -59,6 +69,7 @@ section {
 
   nav li {
     display: inline-block;
+    font-size: 0.7em;
     margin-right: 0.5em;
     margin-left: 0.5em;
   }
