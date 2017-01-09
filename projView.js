@@ -3,22 +3,23 @@
 var projView = {};
 
 projView.populateFilters = function() {
-  $('section').each(function() {
+  $('ul.proj').each(function() {
     var val = $(this).attr('data-category');
     var optionTag = `<option value="${val}">${val}</option>`;
     if ($(`#category-filter option[value="${val}"]`).length === 0) {
       $('#category-filter').append(optionTag);
     }
+    console.log('optionTag', optionTag);
   });
 };
 
 projView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
-      $('section').hide();
-      $(`section[data-category="${$(this).val()}"]`).fadeIn();
+      $('ul.proj').hide();
+      $(`ul[data-category="${$(this).val()}"]`).fadeIn();
     } else {
-      $('section').fadeIn();
+      $('ul.proj').fadeIn();
     }
   });
 };

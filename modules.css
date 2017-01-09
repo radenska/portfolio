@@ -1,43 +1,3 @@
-header {
-  font-size: 1.1em;
-}
-nav img {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.3em;
-  vertical-align: middle;
-}
-nav ul {
-  display: none;
-  list-style: none;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-bottom: 0.5em;
-  background-color: white;
-  opacity: 0.9;
-  position: fixed;
-  right: 3%;
-}
-
-#filters {
-  margin: 1em;
-}
-
-nav li {
-  display: block;
-  text-align: left;
-  font-size: 0.5em;
-  color: #43464C;
-  cursor: pointer;
-  opacity: 0.6;
-}
-
-article, section {
-  font-size: 0.9em;
-  color: #43464C;
-}
-
-
 .read-on {
   font-size: 0.6em;
   display: inline-block;
@@ -49,41 +9,4 @@ article, section {
   padding-right: 0.2em;
   text-align: center;
   line-height: 1.5em;
-}
-
-@media only screen and (min-width: 400px) {
-  header {
-    font-size: 2.2em;
-  }
-
-  article {
-    font-size: 1.2em;
-  }
-  nav ul {
-    display: block;
-    padding: none;
-    background-color: inherit;
-    opacity: 1;
-    position: relative;
-    right: auto;
-  }
-
-  section {
-    font-size: 1.2em;
-  }
-
-  nav li {
-    display: inline-block;
-    font-size: 0.7em;
-    margin-right: 0.5em;
-    margin-left: 0.5em;
-  }
-
-  /*nav:hover ul {
-    display: none;
-  }*/
-
-  .hamburger {
-    display: none;
-  }
 }
