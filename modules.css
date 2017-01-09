@@ -1,73 +1,12 @@
-header {
-  font-size: 1.1em;
-}
-
-nav ul {
-  display: none;
-  list-style: none;
-  vertical-align: middle;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-bottom: 0.5em;
-  background-color: white;
-  opacity: 0.9;
-  position: fixed;
-  right: 3%;
-}
-
-nav li {
-  display: block;
-  text-align: left;
-  font-size: 0.5em;
-  color: slategray;
-  padding-top: 0.5em;
-  cursor: pointer;
-}
-
-article {
-  font-size: 0.8em;
-}
-
-section {
-  font-size: 1em;
-}
-
-.visible {
-  display: none;
-}
-
-@media only screen and (min-width: 400px) {
-  header {
-    font-size: 1.7em;
-  }
-
-  article {
-    font-size: 1.2em;
-  }
-  nav ul {
-    display: block;
-    padding: none;
-    background-color: inherit;
-    opacity: 1;
-    position: relative;
-    right: auto;
-  }
-
-  section {
-    font-size: 1.2em;
-  }
-
-  nav li {
-    display: inline-block;
-    margin-right: 0.5em;
-    margin-left: 0.5em;
-  }
-
-  /*nav:hover ul {
-    display: none;
-  }*/
-
-  .hamburger {
-    display: none;
-  }
+.read-on {
+  font-size: 0.6em;
+  display: inline-block;
+  background: #146496;
+  border-radius: 0.2em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #D1DAF0;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  text-align: center;
+  line-height: 1.5em;
 }
