@@ -1,27 +1,44 @@
 'use strict';
 
-var projArray = []; //stores project objects
+var projArray = {}; //stores project objects
 var navHandle = {}; //object with methods that handles clicking on the nav element
 
-function Proj (obj) {
-  for(var key in obj)
-    this[key] = obj[key];
+// function Proj (obj) {
+//   for(var key in obj)
+//     this[key] = obj[key];
+// }
+
+function getProjInfo() {
+  if (!localStorage.projInfo) {
+    $.getJSON('projInfo.json') //this replaced the for ... in loop used to get the info out of the projInfo.js file
+      .then(function successCallback(data) {
+        projArray = data;
+        localStorage.projInfo = JSON.stringify(data);
+      }, function failCallback() {
+        console.log('oops, you have failed to get the data from the JSON file!');
+      });
+  } else {
+    projArray = JSON.parse(localStorage.projInfo);
+  }
 }
 
-Proj.prototype.toHtml = function() { //does the actual appending to the html
-  var source = $('#projects-template').html();
-  var renderArticle = Handlebars.compile(source);
-  var context = projArray;
-  return renderArticle(this);
-};
-
-projectInfo.forEach(function(ele) { //take the variable from projInfo.js and use the constructor to make each array element an object, which gets pushed to an array
-  projArray.push(new Proj(ele));
-});
+getProjInfo();
 
 projArray.forEach(function(project) { //append each Proj object to the html
-  $('#projects').append(project.toHtml());
+  console.log(project);
+  var source = $('#projects-template').html();
+  var renderArticle = Handlebars.compile(source);
+  $('#projects').append(renderArticle(project));
 });
+
+// projArray.prototype.toHtml = function() { //does the actual appending to the html
+//
+// };
+
+// projArray.forEach(function(ele) { //take the variable from projInfo.js and use the constructor to make each array element an object, which gets pushed to an array
+//   projArray.push(new Proj(ele));
+// });
+
 
 navHandle.handleNavClick = function () {
   $('.tab').on('click', function() {
