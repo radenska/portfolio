@@ -26,17 +26,7 @@ proj.handleETag = function() {
           ETag = JSON.stringify(val);
         }
       });
-      console.log('etag before anything', ETag);
-      if (localStorage.ETag) {
-        console.log('in first if');
-        if (localStorage.ETag !== ETag) {
-          console.log('local storage in second if', localStorage.ETag);
-          console.log('in second if', ETag);
-          proj.getProjInfo();
-          localStorage.ETag = ETag;
-        }
-      } else {
-        console.log('in else', ETag);
+      if (!localStorage.ETag || localStorage.ETag !== ETag) {
         localStorage.ETag = ETag;
         proj.getProjInfo();
       }
