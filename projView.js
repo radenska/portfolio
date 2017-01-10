@@ -9,7 +9,6 @@ projView.populateFilters = function() {
     if ($(`#category-filter option[value="${val}"]`).length === 0) {
       $('#category-filter').append(optionTag);
     }
-    console.log('optionTag', optionTag);
   });
 };
 
@@ -43,6 +42,7 @@ projView.setTeasers = function() {
 };
 
 $(document).ready(function() {
+  proj.renderEach();
   projView.populateFilters();
   projView.handleCategoryFilter();
   projView.setTeasers();
