@@ -35,6 +35,7 @@ proj.handleETag = function() {
 }
 
 proj.renderEach = function() {
+  console.log('in renderEach function');
   var projInfo = JSON.parse(localStorage.projInfo);
   projInfo.forEach(function(project) { //append each Proj object to the html
     var source = $('#projects-template').html();
