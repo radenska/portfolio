@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yana Radenska's Portfolio</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link href="https://fonts.googleapis.com/css?family=Halant:300" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+    <script id="projects-template" type="text/x-handlebars-template">
+      <ul class="proj" data-category="{{category}}">
+        <li>
+          {{{img}}}
+        </li>
+        <li>
+          <h3>
+            <a href="{{path}}" target="_blank">
+              {{name}}
+            </a>
+          </h3>
+          {{{description}}}
+          <a class="read-on" href="#">
+          </a>
+        </li>
+      </ul>
+    </script>
+  </head>
+
+  <body>
+    <header>Yana's Clever Portfolio Title
+      <nav>
+        <div class="hamburger">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <ul>
+          <li class="tab" data-name="projects">
+            <img src="img/folder.png">
+            <span>
+              WORK
+            </span>
+          </li>
+          <li class="tab" data-name="about">
+            <img src="img/info.png">
+            <span>
+              ABOUT
+            </span>
+          </li>
+          <li>
+            <img src="img/Octocat.png">
+            <a href="https://github.com/radenska" target="_blank">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <img src="img/email.png">
+            <a href="mailto:yana_radenska@yahoo.com">
+              CONTACT ME
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr class="styled">
+    <article id="about">
+      This will be a brief description of who I am and what this site is, but for right now, here is some lorem ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+    </article>
+    <article id="projects">
+      <div>
+        <ul id="filters">
+          <li>
+            <select id="category-filter"><option value="">-- Filter Projects by Category --</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <hr class="styled">
+    <footer>
+      tasteful, subtle, and functional footer content
+    </footer>
+    <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/projView.js"></script>
+  </body>
+</html>
