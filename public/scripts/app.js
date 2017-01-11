@@ -4,7 +4,7 @@ var navHandle = {}; //object with methods that handles clicking on the nav eleme
 var proj = {};
 
 proj.getProjInfo = function() {
-  $.getJSON('projInfo.json') //this replaced the for ... in loop used to get the info out of the projInfo.js file
+  $.getJSON('/data/projInfo.json') //this replaced the for ... in loop used to get the info out of the projInfo.js file
     .then(function successCallback(projInfo) {
       localStorage.projInfo = JSON.stringify(projInfo);
       location.reload();
@@ -16,7 +16,7 @@ proj.getProjInfo = function() {
 proj.handleETag = function() {
   var reqETag = $.ajax({
     type: 'HEAD',
-    url: 'projInfo.json',
+    url: '/data/projInfo.json',
     dataType: 'json',
     success: function successCallback() {
       var headers = (reqETag.getAllResponseHeaders()).split('\n');
@@ -35,6 +35,7 @@ proj.handleETag = function() {
 }
 
 proj.renderEach = function() {
+  console.log('in renderEach function');
   var projInfo = JSON.parse(localStorage.projInfo);
   projInfo.forEach(function(project) { //append each Proj object to the html
     var source = $('#projects-template').html();
