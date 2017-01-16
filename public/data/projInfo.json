@@ -13,7 +13,7 @@
     {"name":"Memory Game",
       "path":"https://radenska.github.io/Team_project201",
       "publishedOn":"2015-11-05",
-      "description":"<p>A reproduction of the classic card game <span>in which the player attempts to match pairs of identical cards. This was a collaborative project with three others</span><span> Players can select from either a 4x4 or 6x6 board, refer to game instructions, see and register their high scores, and read some jokes if they don't feel like playing. The image database is larger than the minimum number of images needed, so there is a variety of pictures in every game.</span></p>",
+      "description":"<p>A reproduction of the classic card game <span>in which the player attempts to match pairs of identical cards. This was a collaborative project with three others.</span><span> Players can select from either a 4x4 or 6x6 board, refer to game instructions, see and register their high scores, and read some jokes if they don't feel like playing. The image database is larger than the minimum number of images needed, so there is a variety of pictures in every game.</span></p>",
       "img":"<img src=\"img/memory.png\">",
       "category":"shiny things"},
       {"name":"About Me",

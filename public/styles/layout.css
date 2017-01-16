@@ -18,6 +18,7 @@ li img {
 
 .proj li:first-of-type {
   width: 25%;
+  margin-right: 0.7em;
 }
 
 ul a, span {

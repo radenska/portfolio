@@ -1,9 +1,11 @@
 'use strict';
 
+// const pg = require('pg');
 const express = require('express');
 const app = express();
 
 const PORT = process.env.PORT || 4242;
+// const conString = process.env.DATABASE_URL || 'postgres://localhost:5432';
 
 app.use(express.static('./public'));
 
