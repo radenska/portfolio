@@ -3,7 +3,6 @@
 (function(viewModule) {
 
   var projView = {};
-  viewModule.projView = projView;
 
   projView.populateFilters = function() {
     $('ul.proj').each(function() {
@@ -44,5 +43,7 @@
     projView.handleCategoryFilter();
     projView.setTeasers();
   });
+
+  viewModule.projView = projView;
 
 })(window);
