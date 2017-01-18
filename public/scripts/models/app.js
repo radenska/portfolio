@@ -2,7 +2,6 @@
 
 (function(appModule) {
   var proj = {};
-  appModule.proj = proj;
 
   proj.getProjInfo = function() {
     $.getJSON('/data/projInfo.json') //this replaced the for ... in loop used to get the info out of the projInfo.js file
@@ -39,17 +38,17 @@
       $('#projects').append(renderArticle(project));
     });
   }
-
-  proj.handleNavClick = function () {
-    $('.tab').on('click', function() {
-      $('article').hide();
-      $('#' + $(this).data('name')).fadeIn();
-      if ($('.hamburger').css('display') === 'block') {
-        $('nav ul').css('display', 'none');
-      }
-    });
-    $('.tab:first').click();
-  }
+  //
+  // proj.handleNavClick = function () {
+  //   $('.tab').on('click', function() {
+  //     $('article').hide();
+  //     $('#' + $(this).data('name')).fadeIn();
+  //     if ($('.hamburger').css('display') === 'block') {
+  //       $('nav ul').css('display', 'none');
+  //     }
+  //   });
+  //   $('.tab:first').click();
+  // }
 
   proj.handleHamburgerClick = function() {
     $('.hamburger').on('click', function() {
@@ -61,9 +60,9 @@
   }
 
   $(document).ready(function() {
-    proj.handleETag();
-    proj.handleNavClick();
     proj.handleHamburgerClick();
   });
+
+  appModule.proj = proj;
 
 })(window);
