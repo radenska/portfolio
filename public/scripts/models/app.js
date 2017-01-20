@@ -3,11 +3,11 @@
 (function(appModule) {
   var proj = {};
 
-  proj.getProjInfo = function() {
+  proj.getProjInfo = function(callback) {
     $.getJSON('/data/projInfo.json') //this replaced the for ... in loop used to get the info out of the projInfo.js file
       .then(function (projInfo) {
         localStorage.projInfo = JSON.stringify(projInfo);
-        location.reload();
+        callback();
       }, function () {
         console.log('oops, you have failed to get the data from the JSON file!');
       });
@@ -25,8 +25,8 @@
         });
         if (!localStorage.ETag || localStorage.ETag !== ETag) {
           localStorage.ETag = ETag;
-          proj.getProjInfo();
         }
+        proj.getProjInfo(proj.renderEach);
       }
     }).fail('your HEAD request failed.');
   }
@@ -37,18 +37,10 @@
       let renderArticle = Handlebars.compile(source);
       $('#projects').append(renderArticle(project));
     });
+    projView.populateFilters();
+    projView.handleCategoryFilter();
+    projView.setTeasers();
   }
-  //
-  // proj.handleNavClick = function () {
-  //   $('.tab').on('click', function() {
-  //     $('article').hide();
-  //     $('#' + $(this).data('name')).fadeIn();
-  //     if ($('.hamburger').css('display') === 'block') {
-  //       $('nav ul').css('display', 'none');
-  //     }
-  //   });
-  //   $('.tab:first').click();
-  // }
 
   proj.handleHamburgerClick = function() {
     $('.hamburger').on('click', function() {
