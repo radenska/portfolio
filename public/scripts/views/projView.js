@@ -37,13 +37,6 @@
     });
   };
 
-  $(document).ready(function() {
-    proj.renderEach();
-    projView.populateFilters();
-    projView.handleCategoryFilter();
-    projView.setTeasers();
-  });
-
   viewModule.projView = projView;
 
 })(window);
