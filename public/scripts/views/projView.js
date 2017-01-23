@@ -31,7 +31,8 @@
     };
 
     projView.index = function(projects) {
-      $('#projects').show().siblings().hide();
+      $('#projects').show();
+      $('#about').hide();
 
       $('#projects ul').remove();
       projects.forEach(function(a) {
@@ -41,9 +42,16 @@
       projView.populateFilters();
       projView.handleFilters();
 
-      if ($('#projects ul').length > 1) {
-        $('p *:nth-of-type(n+1)').hide();
-      }
+    //teasers
+      $('p *:nth-of-type(n+1)').hide();
+      var readOn = 'read more';
+      var showLess = 'show less';
+      $('.read-on').text(readOn);
+      $('#projects').on('click', '.read-on', function(e) {
+        e.preventDefault();
+        if ($(this).text() == readOn) $(this).text(showLess).siblings('p').find('*').fadeIn();
+        else $(this).text(readOn).siblings('p').find('*').fadeOut();
+      });
     };
 
   viewModule.projView = projView;
