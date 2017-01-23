@@ -1,48 +1,16 @@
 'use strict';
 
 (function(appModule) {
-  var proj = {};
 
-  proj.getProjInfo = function(callback) {
-    $.getJSON('/data/projInfo.json') //this replaced the for ... in loop used to get the info out of the projInfo.js file
-      .then(function (projInfo) {
-        localStorage.projInfo = JSON.stringify(projInfo);
-        callback();
-      }, function () {
-        console.log('oops, you have failed to get the data from the JSON file!');
-      });
+  function Project (opts) {
+    Object.keys(opts).forEach(function(e) {
+      this[e] = opts[e];
+    }, this);
   }
 
-  proj.handleETag = function() {
-    var ETag;
-    let reqETag = $.ajax({
-      type: 'HEAD',
-      url: '/data/projInfo.json',
-      dataType: 'json',
-      success: function () {
-        (reqETag.getAllResponseHeaders()).split('\n').forEach(function(val) {
-          if (val.slice(0,4) === 'ETag') ETag = JSON.stringify(val);
-        });
-        if (!localStorage.ETag || localStorage.ETag !== ETag) {
-          localStorage.ETag = ETag;
-        }
-        proj.getProjInfo(proj.renderEach);
-      }
-    }).fail('your HEAD request failed.');
-  }
+  Project.allProjects = [];
 
-  proj.renderEach = function() {
-    JSON.parse(localStorage.projInfo).map(function(project) { //append each Proj object to the html
-      let source = $('#projects-template').html();
-      let renderArticle = Handlebars.compile(source);
-      $('#projects').append(renderArticle(project));
-    });
-    projView.populateFilters();
-    projView.handleCategoryFilter();
-    projView.setTeasers();
-  }
-
-  proj.handleHamburgerClick = function() {
+  Project.handleHamburgerClick = function() {
     $('.hamburger').on('click', function() {
       if ($('.hamburger').css('display') === 'block') {
         if ($('nav ul').css('display') === 'none') $('nav ul').css('display','block');
@@ -51,10 +19,91 @@
     });
   }
 
+  Project.createTable = function(callback) {
+    webDB.execute(
+    'CREATE TABLE IF NOT EXISTS projects (' +
+      'id INTEGER PRIMARY KEY, ' +
+      'name VARCHAR(255) NOT NULL, ' +
+      'path VARCHAR(255) NOT NULL, ' +
+      'publishedOn DATETIME(20), ' +
+      'description VARCHAR(10000), ' +
+      'img VARCHAR(255), ' +
+      'category TEXT NOT NULL);',
+    callback
+    );
+  };
+
+  Project.findWhere = function(field, value, callback) {
+    webDB.execute(
+      [
+        {
+          sql: 'SELECT * FROM projects WHERE ' + field + ' = ?;',
+          data: [value]
+        }
+      ],
+      callback
+    );
+  };
+
+  Project.allCategories = function(callback) {
+    webDB.execute('SELECT DISTINCT category FROM projects;', callback);
+  };
+
+  Project.prototype.insertRecord = function(callback) {
+    webDB.execute(
+      [
+        {
+          'sql': 'INSERT INTO projects ' +
+          '(name, path, publishedOn, description, img, category) ' +
+          'VALUES (?, ?, ?, ?, ?, ?);',
+          'data':
+          [ this.name,
+            this.path,
+            this.publishedOn,
+            this.description,
+            this.img,
+            this.category],
+        }
+      ],
+      callback
+      );
+  };
+
+  Project.loadAll = function(rows) {
+      Project.allProjects = rows.map(function(ele) {
+        return new Project(ele);
+      });
+  };
+
+  Project.fetchAll = function(callback) {
+    webDB.execute(
+        'SELECT * FROM projects ORDER BY publishedOn DESC',
+          function(rows) {
+            if (rows.length) {
+              Project.loadAll(rows);
+              callback();
+            } else {
+              $.getJSON('/data/projInfo.json', function(rawData) {
+                rawData.forEach(function(item) {
+                  var project = new Project(item);
+                  project.insertRecord();
+                });
+                webDB.execute(
+                  'SELECT * FROM projects ORDER BY publishedOn DESC',
+                  function(rows) {
+                    Project.loadAll(rows);
+                    callback();
+                  });
+              });
+            }
+          });
+  };
+
+
   $(document).ready(function() {
-    proj.handleHamburgerClick();
+    Project.handleHamburgerClick();
   });
 
-  appModule.proj = proj;
+  appModule.Project = Project;
 
 })(window);
