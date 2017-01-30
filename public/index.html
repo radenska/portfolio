@@ -36,6 +36,9 @@
     <li>Number of Repositories Deployed: <em>{{deployed}}</em></li>
     <li>Total Size of All Repositories: <em>{{totalSize}} KB</em></li>
   </script>
+  <script id="option-template" type="text/x-handlebars-templage">
+    <option value="{{val}}">{{val}}</option>
+  </script>
   </head>
 
   <body>
@@ -96,6 +99,8 @@
     <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <script src="/vendor/scripts/html5sql.js"></script>
+    <script src="/vendor/scripts/webdb.js"></script>
     <script src="/vendor/scripts/page.js"></script>
     <script src="/scripts/models/app.js"></script>
     <script src="/scripts/models/gitHubStats.js"></script>
