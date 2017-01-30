@@ -1,2 +1,2 @@
 # portfolio
-This app is deployed at https://dashboard.heroku.com/apps/radenska-portfolio
+This app is deployed at https://radenska-portfolio.herokuapp.com

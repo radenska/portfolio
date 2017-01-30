@@ -1,3 +1,5 @@
+'use strict'
+
 (function(mod) {
   const projectController = {};
 
